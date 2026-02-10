@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Blue Bird Software Services | Smart Business Solutions</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@500;600;700&display=swap" rel="stylesheet">
+
+    <style>
+        :root {
+            --primary-color: #0d6efd;
+            --secondary-color: #0a58ca;
+            --accent-color: #ffc107;
+            --dark-text: #1e293b;
+            --light-text: #64748b;
+            --bg-light: #f8fafc;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--dark-text);
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4, h5, .navbar-brand {
+            font-family: 'Poppins', sans-serif;
+        }
+
+        /* Navbar */
+        .navbar {
+            padding: 15px 0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+        }
+        .nav-link {
+            font-weight: 500;
+            color: var(--dark-text) !important;
+            margin-left: 15px;
+            transition: color 0.3s;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: var(--primary-color) !important;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding: 140px 0 80px;
+            background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+            position: relative;
+        }
+        .hero-shape {
+            position: absolute;
+            right: 0;
+            top: 0;
+            width: 50%;
+            height: 100%;
+            background: #e0eeff;
+            clip-path: polygon(20% 0%, 100% 0, 100% 100%, 0% 100%);
+            z-index: 0;
+            opacity: 0.5;
+        }
+
+        /* Cards */
+        .service-card {
+            border: none;
+            border-radius: 16px;
+            padding: 30px;
+            background: white;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+            transition: transform 0.3s, box-shadow 0.3s;
+            height: 100%;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(13, 110, 253, 0.15);
+        }
+        .icon-wrapper {
+            width: 60px;
+            height: 60px;
+            background: rgba(13, 110, 253, 0.1);
+            color: var(--primary-color);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            margin-bottom: 20px;
+        }
+
+        /* Diagram / Timeline */
+        .timeline-step {
+            position: relative;
+            padding: 20px;
+            text-align: center;
+        }
+        .step-number {
+            width: 40px;
+            height: 40px;
+            background: var(--primary-color);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin: 0 auto 15px;
+            position: relative;
+            z-index: 2;
+        }
+        .timeline-line {
+            position: absolute;
+            top: 40px;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: #e2e8f0;
+            z-index: 1;
+            display: none;
+        }
+        @media(min-width: 768px) {
+            .timeline-line { display: block; }
+        }
+
+        /* Buttons */
+        .btn-primary-custom {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(13, 110, 253, 0.3);
+            transition: all 0.3s;
+        }
+        .btn-primary-custom:hover {
+            background-color: var(--secondary-color);
+            transform: translateY(-2px);
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background: #0f172a;
+            color: #cbd5e1;
+            padding: 60px 0 20px;
+        }
+        footer h5 { color: white; margin-bottom: 20px; }
+        footer a { color: #cbd5e1; text-decoration: none; display: block; margin-bottom: 10px; }
+        footer a:hover { color: white; }
+
+        /* Utilities */
+        .text-gradient {
+            background: linear-gradient(to right, #0d6efd, #6610f2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        img.img-fluid.rounded-4 {
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg fixed-top shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold text-primary d-flex align-items-center" href="#">
+                <img src="bb_logo.png" style="width: 60px;" alt=""></i> Blue Bird Software Services
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navMenu">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navMenu">
+                <ul class="navbar-nav ms-auto align-items-center">
+                    <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#services">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#products">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#process">Process</a></li>
+                    <li class="nav-item ms-lg-3">
+                        <a href="https://wa.me/917744880920" class="btn btn-primary-custom">
+                            <i class="bi bi-whatsapp me-2"></i> Let's Talk
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="hero d-flex align-items-center">
+        <div class="hero-shape d-none d-lg-block"></div>
+        <div class="container position-relative">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-5 mb-lg-0">
+                    <span class="badge bg-light text-primary border border-primary mb-3 px-3 py-2 rounded-pill">
+                        🚀 Elevate Your Business
+                    </span>
+                    <h1 class="display-4 fw-bold mb-4 lh-base">
+                        Smart Software Solutions for <span class="text-gradient">Growing Businesses</span>
+                    </h1>
+                    <p class="lead text-secondary mb-4">
+                        We build custom Web Apps, ERPs, and SaaS platforms that automate your work and increase your revenue. Simple, Scalable, and Secure.
+                    </p>
+                    <div class="d-flex gap-3">
+                        <a href="#contact" class="btn btn-primary-custom">Get a Free Demo</a>
+                        <a href="#services" class="btn btn-outline-primary rounded-pill px-4 py-2 fw-bold d-flex align-items-center">
+                            View Services
+                        </a>
+                    </div>
+                    <div class="mt-4 pt-4 border-top d-flex gap-4">
+                        <div>
+                            <h5 class="fw-bold m-0">100+</h5>
+                            <small class="text-muted">Happy Clients</small>
+                        </div>
+                        <div>
+                            <h5 class="fw-bold m-0">24/7</h5>
+                            <small class="text-muted">Support</small>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="banner.jpg" alt="Software Dashboard" class="img-fluid rounded-4">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-5 bg-light">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h6 class="text-primary fw-bold text-uppercase">What We Do</h6>
+                <h2 class="fw-bold">Complete Digital Solutions</h2>
+                <p class="text-muted">Everything you need to run your business digitally.</p>
+            </div>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="bi bi-shop"></i>
+                        </div>
+                        <h4>Restaurant POS</h4>
+                        <p class="text-muted">Complete management for cafes and hotels. Includes KOT, billing, QR Menu, and Inventory tracking.</p>
+                        <a href="#" class="text-primary text-decoration-none fw-bold">Learn more <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="bi bi-mortarboard"></i>
+                        </div>
+                        <h4>Coaching ERP</h4>
+                        <p class="text-muted">Automate your institute. Student admission, fee collection, batch management, and ID cards.</p>
+                        <a href="#" class="text-primary text-decoration-none fw-bold">Learn more <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="bi bi-receipt"></i>
+                        </div>
+                        <h4>Billing Software</h4>
+                        <p class="text-muted">GST compliant billing software for retail shops. Manage stock, suppliers, and customer ledgers.</p>
+                        <a href="#" class="text-primary text-decoration-none fw-bold">Learn more <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="bi bi-laptop"></i>
+                        </div>
+                        <h4>Custom Web Apps</h4>
+                        <p class="text-muted">Got a unique idea? We build custom web applications tailored exactly to your business logic.</p>
+                        <a href="#" class="text-primary text-decoration-none fw-bold">Learn more <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="bi bi-phone"></i>
+                        </div>
+                        <h4>App Development</h4>
+                        <p class="text-muted">Android applications to extend your business reach to mobile users directly.</p>
+                        <a href="#" class="text-primary text-decoration-none fw-bold">Learn more <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="service-card">
+                        <div class="icon-wrapper">
+                            <i class="bi bi-graph-up-arrow"></i>
+                        </div>
+                        <h4>Digital Marketing</h4>
+                        <p class="text-muted">Grow your brand with our SEO, Social Media, and Google Ad campaigns.</p>
+                        <a href="#" class="text-primary text-decoration-none fw-bold">Learn more <i class="bi bi-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="py-5">
+        <div class="container py-5">
+            <div class="row align-items-center mb-5 pb-5 border-bottom">
+                <div class="col-md-6 order-md-2">
+                    <img src="restaurant.jpg" class="img-fluid rounded-4 shadow" alt="POS System">
+                </div>
+                <div class="col-md-6 order-md-1">
+                    <span class="text-primary fw-bold">Featured Product</span>
+                    <h3 class="fw-bold mt-2">Smart Restaurant POS</h3>
+                    <p class="text-muted mt-3">Stop using paper bills. Switch to our smart POS that works on PC and Tablet.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Touch-friendly interface</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Kitchen Order Tickets (KOT)</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Daily Sales Reports on WhatsApp</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <img src="edu.jpg" class="img-fluid rounded-4 shadow" alt="ERP System">
+                </div>
+                <div class="col-md-6">
+                    <span class="text-primary fw-bold">Best Seller</span>
+                    <h3 class="fw-bold mt-2">Classroom ERP</h3>
+                    <p class="text-muted mt-3">Manage your coaching classes efficiently. Get rid of Excel sheets and manual registers.</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Automated Fee Reminders</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Student Attendance Tracking</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i> Online Exam Module</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="process" class="py-5 bg-white">
+        <div class="container py-5">
+            <div class="text-center mb-5">
+                <h2 class="fw-bold">How We Work</h2>
+                <p class="text-muted">Our simplified development process</p>
+            </div>
+            
+            <div class="row text-center position-relative">
+                <div class="timeline-line d-none d-md-block"></div>
+                
+                <div class="col-md-3 timeline-step">
+                    <div class="step-number">1</div>
+                    <h5 class="fw-bold">Meet</h5>
+                    <p class="small text-muted">We discuss your requirements and understand your business logic.</p>
+                </div>
+                <div class="col-md-3 timeline-step">
+                    <div class="step-number">2</div>
+                    <h5 class="fw-bold">Plan</h5>
+                    <p class="small text-muted">We create a blueprint, wireframes, and select the best tech stack.</p>
+                </div>
+                <div class="col-md-3 timeline-step">
+                    <div class="step-number">3</div>
+                    <h5 class="fw-bold">Develop</h5>
+                    <p class="small text-muted">Our expert developers build your software with clean code.</p>
+                </div>
+                <div class="col-md-3 timeline-step">
+                    <div class="step-number">4</div>
+                    <h5 class="fw-bold">Launch</h5>
+                    <p class="small text-muted">We deploy your software and provide training and support.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-5" style="background: linear-gradient(135deg, #0d6efd 0%, #0043a8 100%); color: white;">
+        <div class="container py-5">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h2 class="fw-bold display-6 mb-3">Ready to Upgrade Your Business?</h2>
+                    <p class="lead mb-4" style="opacity: 0.9;">Get a free consultation and demo today. No hidden charges.</p>
+                    <div class="d-flex flex-column flex-md-row justify-content-center gap-3">
+                        <a href="tel:7744880920" class="btn btn-light btn-lg fw-bold text-primary">
+                            <i class="bi bi-telephone-fill me-2"></i> Call: 8999175980
+                        </a>
+                        <a href="https://wa.me/8999175980" class="btn btn-outline-light btn-lg fw-bold">
+                            <i class="bi bi-whatsapp me-2"></i> Chat on WhatsApp
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h5 class="fw-bold text-white">Blue Bird Software Services</h5>
+                    <p class="small">Providing affordable and scalable software solutions tailored for local businesses in Nanded and beyond.</p>
+                    <div class="d-flex gap-3 mt-3">
+                        <a href="#"><i class="bi bi-facebook fs-5"></i></a>
+                        <a href="#"><i class="bi bi-instagram fs-5"></i></a>
+                        <a href="#"><i class="bi bi-linkedin fs-5"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2">
+                    <h5>Quick Links</h5>
+                    <a href="#home">Home</a>
+                    <a href="#about">About Us</a>
+                    <a href="#products">Products</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <div class="col-md-3">
+                    <h5>Services</h5>
+                    <a href="#">Web Development</a>
+                    <a href="#">Billing Software</a>
+                    <a href="#">School ERP</a>
+                    <a href="#">Digital Marketing</a>
+                </div>
+                <div class="col-md-3">
+                    <h5>Contact</h5>
+                    <p class="small mb-2"><i class="bi bi-geo-alt me-2"></i> Nanded, Maharashtra</p>
+                    <p class="small mb-2"><i class="bi bi-telephone me-2"></i> +91 8999175980</p>
+                    <p class="small mb-0"><i class="bi bi-envelope me-2"></i> nareshkanode9860@gmail.com</p>
+                </div>
+            </div>
+            <div class="border-top border-secondary mt-4 pt-4 text-center small">
+                <p class="mb-0">&copy; 2026 Blue Bird Software Services. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
